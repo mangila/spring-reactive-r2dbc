@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  mysql:
+    image: mysql:8.0.28
+    environment:
+      MYSQL_USER: mangila
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: db
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    ports:
+      - "3306:3306"

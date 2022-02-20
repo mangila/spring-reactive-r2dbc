@@ -1,0 +1,13 @@
+spring:
+  r2dbc:
+    username: mangila
+    password: password
+  flyway:
+    user: ${spring.r2dbc.username}
+    password: ${spring.r2dbc.password}
+    baseline-on-migrate: true
+    locations: classpath:flyway
+    table: flyway
+springdoc:
+  api-docs:
+    enabled: false

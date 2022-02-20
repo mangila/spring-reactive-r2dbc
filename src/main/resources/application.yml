@@ -1,0 +1,26 @@
+app:
+  description: @project.description@
+  version: @project.version@
+  title: @project.name@
+spring:
+  r2dbc:
+    username: mangila
+    password: password
+  flyway:
+    user: ${spring.r2dbc.username}
+    password: ${spring.r2dbc.password}
+    baseline-on-migrate: true
+    locations: classpath:flyway
+    table: flyway
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    display-request-duration: true
+    groups-order: DESC
+    operationsSorter: method
+    disable-swagger-default-url: true
+  cache:
+    disabled: true
+server:
+  http2:
+    enabled: true

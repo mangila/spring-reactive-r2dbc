@@ -1,0 +1,21 @@
+version: "3.3"
+services:
+  mysql:
+    image: mysql:8.0.28
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_USER: mangila
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: db
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+  api:
+    image: mangila/spring-reactive-r2dbc
+    ports:
+      - "8080:8080"
+    environment:
+      - "SPRING_PROFILES_ACTIVE=dev"
+    links:
+      - mysql
+    depends_on:
+      - mysql

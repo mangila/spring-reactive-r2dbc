@@ -1,0 +1,5 @@
+spring:
+  r2dbc:
+    url: r2dbc:pool:mysql://localhost:3306/db
+  flyway:
+    url: jdbc:mysql://localhost:3306/db
