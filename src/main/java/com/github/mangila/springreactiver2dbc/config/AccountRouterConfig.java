@@ -94,7 +94,7 @@ public class AccountRouterConfig {
     }
 
     @Bean
-    public GroupedOpenApi accountApi() {
+    public GroupedOpenApi account() {
         return GroupedOpenApi.builder()
                 .group("Account")
                 .pathsToMatch("/api/v1/account/**")

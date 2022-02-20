@@ -50,7 +50,7 @@ public class CurrencyRouterConfig {
     }
 
     @Bean
-    public GroupedOpenApi moneyApi() {
+    public GroupedOpenApi currency() {
         return GroupedOpenApi.builder()
                 .group("Currency")
                 .pathsToMatch("/api/v1/currency/**")
