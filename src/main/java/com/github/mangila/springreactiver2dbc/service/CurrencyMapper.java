@@ -6,12 +6,11 @@ import org.springframework.stereotype.Component;
 import javax.money.CurrencyUnit;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class CurrencyMapper {
 
     public List<CurrencyDTO> toDTO(Collection<CurrencyUnit> currencyUnits) {
-        return currencyUnits.stream().map(c -> new CurrencyDTO(c.getCurrencyCode())).collect(Collectors.toList());
+        return currencyUnits.stream().map(c -> new CurrencyDTO(c.getCurrencyCode())).toList();
     }
 }
