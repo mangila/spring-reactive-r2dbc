@@ -28,7 +28,7 @@ public class AccountHandler {
     public Mono<ServerResponse> withdraw(ServerRequest serverRequest) {
         return serverRequest.bodyToMono(WithdrawalRequestDTO.class)
                 .flatMap(request -> service.withdraw(request.getAccountNumber(), request.getAmount(), request.getCurrencyCode())
-                        .flatMap(response -> ServerResponse.ok().bodyValue(response)))
+                        .flatMap(response -> ServerResponse.accepted().bodyValue(response)))
                 .switchIfEmpty(ServerResponse.notFound().build())
                 .onErrorResume(t -> {
                     log.error("error", t);

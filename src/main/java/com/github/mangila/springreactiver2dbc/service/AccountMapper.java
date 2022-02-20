@@ -21,7 +21,7 @@ public class AccountMapper {
                         .amount(clientTransaction.getAmount())
                         .created(clientTransaction.getCreated())
                         .uuid(clientTransaction.getUuid())
-                        .build()).collect(Collectors.toList()))
+                        .build()).toList())
                 .build();
     }
 }

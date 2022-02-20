@@ -14,7 +14,7 @@
     <name>spring-reactive-r2dbc</name>
     <description>spring-reactive-r2dbc</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
