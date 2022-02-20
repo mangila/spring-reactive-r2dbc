@@ -1,6 +1,6 @@
 version: "3.3"
 services:
-  mysql:
+  database:
     image: mysql:8.0.28
     ports:
       - "3306:3306"
@@ -10,12 +10,13 @@ services:
       MYSQL_DATABASE: db
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
   api:
+    restart: always
     image: mangila/spring-reactive-r2dbc
     ports:
       - "8080:8080"
     environment:
-      - "SPRING_PROFILES_ACTIVE=dev"
+      - "SPRING_PROFILES_ACTIVE=prod"
     links:
-      - mysql
+      - database
     depends_on:
-      - mysql
+      - database

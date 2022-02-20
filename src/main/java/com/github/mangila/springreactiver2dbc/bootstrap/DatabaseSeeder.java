@@ -13,7 +13,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
-@Profile("dev")
+@Profile({"dev", "prod"})
 @AllArgsConstructor
 @Slf4j
 public class DatabaseSeeder implements CommandLineRunner, DisposableBean {
