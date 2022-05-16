@@ -9,9 +9,9 @@ class MoneyUtilsTest {
 
     @Test
     void computeWithdrawal() {
-        var balance = MoneyUtils.getFastMoney("SEK", 100d, "USD");
-        var withdrawal = MoneyUtils.getFastMoney("USD", 1d);
+        var balance = MoneyUtils.getFastMoney("SEK", 100d, "SEK");
+        var withdrawal = MoneyUtils.getFastMoney("SEK", 1d);
         balance = MoneyUtils.computeWithdrawal(withdrawal, balance, "SEK");
-        assertThat(balance.getNumber().doubleValue()).isGreaterThanOrEqualTo(85d);
+        assertThat(balance.getNumber().doubleValue()).isEqualTo(99d);
     }
 }

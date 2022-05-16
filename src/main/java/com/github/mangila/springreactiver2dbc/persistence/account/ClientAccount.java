@@ -1,12 +1,14 @@
 package com.github.mangila.springreactiver2dbc.persistence.account;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.domain.Persistable;
 import reactor.util.annotation.NonNull;
 
 @Data
+@NoArgsConstructor
 public class ClientAccount implements Persistable<String> {
     @Id
     @NonNull

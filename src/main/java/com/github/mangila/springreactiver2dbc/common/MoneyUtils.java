@@ -1,7 +1,6 @@
 package com.github.mangila.springreactiver2dbc.common;
 
 import org.javamoney.moneta.FastMoney;
-import org.springdoc.core.converters.models.MonetaryAmount;
 
 import javax.money.Monetary;
 import javax.money.convert.CurrencyConversion;
