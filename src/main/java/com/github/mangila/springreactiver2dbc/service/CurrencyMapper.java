@@ -11,6 +11,6 @@ import java.util.List;
 public class CurrencyMapper {
 
     public List<CurrencyDTO> toDTO(Collection<CurrencyUnit> currencyUnits) {
-        return currencyUnits.stream().map(c -> new CurrencyDTO(c.getCurrencyCode())).toList();
+        return currencyUnits.stream().map(CurrencyDTO::new).toList();
     }
 }
